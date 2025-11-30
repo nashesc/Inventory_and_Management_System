@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Transaction - Inventory & Sales Management System</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/a72bc5f9a8.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body-transaction">
+   <!-- ----- SIDEBAR / NAVIGATION ----- -->
+   <nav class="sidebar">
+      <div class="logo">
+         <div class="logo-circle"></div>
+         <span class="logo-name">Logo</span>
+      </div>
+
+      <ul class="nav-list">
+         <li class="dashboard">
+            <a href="./index.html" class="nav-dashboard">
+               <i class="bi bi-house"></i>
+               <span>Dashboard</span>
+            </a>
+         </li>
+
+         <li class="inventory">
+            <a href="./inventory.html" class="nav-inventory">
+               <i class="bi bi-archive"></i>
+               <span>Inventory</span>
+            </a>
+         </li>
+
+         <li class="transaction">
+            <a href="#transaction" class="nav-transaction">
+               <i class="bi bi-card-checklist"></i>
+               <span>Transaction</span>
+            </a>
+         </li>
+
+         <li class="history">
+            <a href="./history.html" class="nav-history">
+               <i class="bi bi-clock-history"></i>
+               <span>History</span>
+            </a>
+         </li>
+      </ul>
+
+      <ul class="nav-list2">
+         <li class="settings">
+            <a href="./settings.html" class="nav-settings">
+               <i class="bi bi-gear"></i>
+               <span>Settings</span>
+            </a>
+         </li>
+
+         <li class="logout">
+            <a href="./login.html" class="nav-logout">
+               <i class="bi bi-box-arrow-left"></i>
+               <span>Logout</span>
+            </a>
+        </li>
+       </ul>
+   </nav>
+
+
+   <!-- ----- HEADER ----- -->
+   <header class="header">
+      <div class="header-left">
+         <div class="header-dashboard">
+            <h1>Transaction</h1>
+         </div>
+      </div>
+      
+      <div class="header-right">
+         <div class="header-date">
+            Nov. 14, 2025
+         </div>
+
+         <div class="header-notif">
+            <i class="fa-solid fa-bell"></i>
+         </div>
+
+         <a href="./profile.html">
+            <div class="profile-section">
+               <div class="profile-icon">
+                  <i class="bi bi-person-fill"></i>
+               </div>
+
+               <div class="profile-text">
+                  <div class="profile-name">Jonas Escanilla</div>
+                  <div class="profile-role">Admin</div>
+               </div>
+            </div>
+         </a>
+      </div>
+   </header>
+
+   
+   
+   <!-- ----- MAIN ----- -->
+   <main class="main">
+      <!-- SEARCH BAR -->
+      <div class="search-box">
+         <i class="bi bi-search"></i>
+         <input type="text" placeholder="Search by item name or ID...">
+         <button class="search-btn button" type="button">Search</button>
+      </div>
+
+      <div class="top-section">
+         <!-- PRODUCT TABLE -->
+         <table class="product-table">
+            <thead>
+               <tr>
+                  <th>Item Name</th>
+                  <th>Price</th>
+                  <th>Available <br> Quantity</th>
+               </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+         </table>
+
+         <!-- QUANTITY + ADD BUTTON -->
+         <div class="add-section">
+            <div class="quantity">
+               <p>Quantity:</p>
+               <input class="qty-input" type="number" min="1" value="1" >
+            </div>
+
+            <div class="add-button">
+               <button class="button">Add</button>
+            </div>
+         </div>
+      </div>
+
+         <!-- ITEMS TO PURCHASE -->
+      <section class="purchase">
+         <h2 class="section-title">Items to Purchase</h2>
+         <div class="item-to-purchase">
+            <table class="cart-table sales-table" id="cart-table">
+               <thead>
+                  <tr>
+                     <th>Item Name</th>
+                     <th>Price</th>
+                     <th>Quantity</th>
+                     <th>Subtotal</th>
+                     <th>Actions</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  
+               </tbody>
+            </table>
+
+            <!-- TOTAL + PRINT RECEIPT -->
+            <div class="summary-panel">
+               <div class="total-box">
+                  <p>Total</p>
+                  <h3>₱0</h3>
+               </div>
+
+               <button class="receipt-btn button">Print Receipt</button>
+            </div>
+         </div>         
+      </section>
+      
+      
+      <div class="search-container">
+         <h2 class="section-title">Transaction history</h2>
+         <div class="section-header">
+            <div class="search-box">
+               <i class="bi bi-search"></i>
+               <input type="text" placeholder="Search by item name, ID or date...">
+               <button class="search-btn button" type="button">Search</button>
+            </div>
+
+            <div class="dropdown">
+               <button class="sort-btn dropdown-btn button" type="button">
+                  <i class="bi bi-arrow-down-up"></i>
+                  <span>Sort</span>
+               </button>
+               <div class="dropdown-options">
+                  <a href="">Default (Newest-Oldest)</a>
+                  <a href="">Item (A-Z)</a>
+                  <a href="">Quantity</a>
+                  <a href="">Total</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="transaction-teble sales-table">
+         <table id="transaction-history-table">
+            <thead>
+               <tr>
+                  <th>Date</th>
+                  <th>Item Sold</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                  <th>Time</th>
+               </tr>
+            </thead>
+            <tbody>
+               
+            </tbody>
+         </table>
+      </div>
+
+
+      <!-- ALERT -->
+      <div class="custom-alert" id="custom-alert"> </div>
+   </main>
+
+   <script src="./js/script.js"></script>
+   <script src="./js/transaction.js"></script>
+   <script src="./js/product.js"></script>
+   <script src="./js/transactionStorage.js"></script>
+</body>
+</html>
