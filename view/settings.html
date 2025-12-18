@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Settings - Inventory & Sales Management System</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/a72bc5f9a8.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="body-settings">
+
+   <div class="background"></div>
+   <!-- ----- SIDEBAR / NAVIGATION ----- -->
+   <nav class="sidebar">
+      <div class="logo">
+         <div class="logo-circle"></div>
+         <span class="logo-name">Logo</span>
+      </div>
+
+      <ul class="nav-list">
+         <li class="dashboard">
+            <a href="./index.html" class="nav-dashboard">
+               <i class="bi bi-house"></i>
+               <span>Dashboard</span>
+            </a>
+         </li>
+
+         <li class="inventory">
+            <a href="./inventory.html" class="nav-inventory">
+               <i class="bi bi-archive"></i>
+               <span>Inventory</span>
+            </a>
+         </li>
+
+         <li class="transaction">
+            <a href="./transaction.html" class="nav-transaction">
+               <i class="bi bi-card-checklist"></i>
+               <span>Transaction</span>
+            </a>
+         </li>
+
+         <li class="history">
+            <a href="./history.html" class="nav-history">
+               <i class="bi bi-clock-history"></i>
+               <span>History</span>
+            </a>
+         </li>
+      </ul>
+
+      <ul class="nav-list2">
+         <li class="settings">
+            <a href="./settings.html" class="nav-settings">
+               <i class="bi bi-gear"></i>
+               <span>Settings</span>
+            </a>
+         </li>
+
+         <li class="logout">
+            <a href="./login.html" class="nav-logout">
+               <i class="bi bi-box-arrow-left"></i>
+               <span>Logout</span>
+            </a>
+         </li>
+      </ul>
+   </nav>
+
+
+   <!-- ----- HEADER ----- -->
+   <header class="header">
+      <div class="header-left">
+         <div class="header-dashboard">
+            <h1>Settings</h1>
+         </div>
+      </div>
+      
+      <div class="header-right">
+         <button class="button create-account-btn" id="createAccountBtn">
+            <i class="bi bi-person-plus"></i>
+            Create Account
+         </button>
+
+         <button class="button monitor-accounts-btn" id="monitorAccountsBtn">
+            <i class="bi bi-people"></i>
+            Monitor Accounts
+         </button>
+
+         <div class="header-date"></div>
+
+         <div class="header-notif">
+            <i class="fa-solid fa-bell"></i>
+         </div>
+
+         <a href="./profile.html">
+            <div class="profile-section">
+               <div class="profile-icon">
+                  <i class="bi bi-person-fill"></i>
+               </div>
+
+               <div class="profile-text">
+                  <div class="profile-name">Jonas Escanilla</div>
+                  <div class="profile-role">Admin</div>
+               </div>
+            </div>
+         </a>
+      </div>
+   </header>
+
+   
+   
+   <!-- ----- MAIN ----- -->
+   <main class="main settings-grid">
+      <section class="card general-settings">
+         <div class="card-header">General</div>
+         <div class="card-body">
+            <div class="row">
+               <p>Low stock alert level</p>
+               <div class="dropdown">
+                  <button class="dropdown-btn button" type="button">
+                     15
+                     <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="dropdown-options">
+                     <a href="">5</a>
+                     <a href="">10</a>
+                     <a href="">15</a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <p>Currency</p>
+               <div class="dropdown">
+                  <button class="dropdown-btn button" type="button">
+                     ₱
+                     <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="dropdown-options">
+                     <a href="">₱</a>
+                     <a href="">$</a>
+                     <a href="">£</a>
+                  </div>
+               </div>
+            </div>
+
+            <div class="row">
+               <p>Date and time format</p>
+               <div class="dropdown">
+                  <button class="dropdown-btn button" type="button">
+                     MM/DD/YYYY
+                     <i class="bi bi-chevron-down"></i>
+                  </button>
+                  <div class="dropdown-options">
+                     <a href="">MM/DD/YYYY</a>
+                     <a href="">DD/MM/YYYY</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- ACCOUNT -->
+      <section class="card account-settings">
+         <div class="card-header">Account</div>
+         <div class="card-body">
+            <div class="row">
+               <label>Logged in as</label>
+               <span class="badge button">Admin</span>
+            </div>
+
+            <div class="row">
+               <label>Username</label>
+               <input type="text" value="jonasEscanilla">
+            </div>
+
+            <div class="row">
+               <label>Password</label>
+               <input type="password" value="********">
+            </div>
+
+            <div class="buttons">
+               <div class="edit">
+                  <button class="button" type="button">Edit</button>
+               </div>
+               <div class="save">
+                  <button class="button" type="button">Save changes</button>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- DATA MANAGEMENT -->
+      <section class="card data-manage-settings">
+         <div class="card-header">Data Management</div>
+         <div class="card-body">
+            <p>Backup your data regularly</p>
+
+            <div class="buttons">
+               <div class="backup">
+                  <button class="button" type="button">
+                     <i class="fa-solid fa-cloud-arrow-down"></i>
+                     Backup now
+                  </button>
+               </div>
+               <div class="restore">
+                  <button class="button" type="button">
+                     <i class="fa-solid fa-rotate"></i>
+                     Restore data
+                  </button>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- STORE INFORMATION -->
+      <section class="card store-info-settings">
+         <div class="card-header">Store Information</div>
+         <div class="card-body">
+            <div class="row">
+               <label>Store name</label>
+               <span>(storeName)</span>
+            </div>
+
+            <div class="row">
+               <label>Address</label>
+               <span>(storeAddress)</span>
+            </div>
+
+            <div class="row">
+               <label>Contact</label>
+               <span>09123456789</span>
+            </div>
+
+            <div class="buttons">
+               <div class="edit">
+                  <button class="button" type="button">Edit</button>
+               </div>
+               <div class="save">
+                  <button class="button" type="button">Save changes</button>
+               </div>
+            </div>
+         </div>
+      </section>
+   
+   </main>
+
+
+   <!-- CREATE ACCOUNT MODAL -->
+   <div class="modal-overlay" id="createAccountModal">
+      <div class="modal modal-create-account">
+         <div class="modal-header">
+            <h2><i class="bi bi-person-plus-fill"></i> Create New Account</h2>
+            <button class="modal-close" id="closeCreateModal">&times;</button>
+         </div>
+         <div class="modal-body">
+            <form id="createAccountForm">
+               <div class="form-group">
+                  <label for="newUsername">Username</label>
+                  <input type="text" id="newUsername" class="form-input" required>
+               </div>
+
+               <div class="form-group">
+                  <label for="newPassword">Password</label>
+                  <input type="password" id="newPassword" class="form-input" required>
+               </div>
+
+               <div class="form-group">
+                  <label for="confirmPassword">Confirm Password</label>
+                  <input type="password" id="confirmPassword" class="form-input" required>
+               </div>
+
+               <div class="form-group">
+                  <label for="accountRole">Role</label>
+                  <select id="accountRole" class="form-input" required>
+                     <option value="">Select Role</option>
+                     <option value="Admin">Admin</option>
+                     <option value="Staff">Staff</option>
+                  </select>
+               </div>
+
+               <div class="form-message" id="createFormMessage"></div>
+
+               <button type="submit" class="button modal-submit-btn">Create Account</button>
+            </form>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- MONITOR ACCOUNTS MODAL -->
+   <div class="modal-overlay" id="monitorAccountsModal">
+      <div class="modal modal-monitor-accounts">
+         <div class="modal-header">
+            <h2><i class="bi bi-people-fill"></i> Account Management</h2>
+            <button class="modal-close" id="closeMonitorModal">&times;</button>
+         </div>
+         <div class="modal-body">
+            <!-- Tabs -->
+            <div class="account-tabs">
+               <button class="tab-btn active" data-tab="active">Active Accounts</button>
+               <button class="tab-btn" data-tab="pending">Pending Approval</button>
+            </div>
+
+            <div class="tab-content active" id="activeTab">
+               <div class="accounts-list" id="activeAccountsList">
+                  
+               </div>
+            </div>
+
+            <div class="tab-content" id="pendingTab">
+               <div class="accounts-list" id="pendingAccountsList">
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- DELETE CONFIRMATION MODAL -->
+   <div class="modal-background" id="deleteAccountModal" style="display: none;">
+      <div class="modal-box">
+         <h3>Delete Account</h3>
+         <p id="deleteAccountMessage">Are you sure you want to delete this account?</p>
+         <div class="modal-buttons">
+            <button class="cancel-btn" id="cancelDeleteBtn">Cancel</button>
+            <button class="confirm-btn" id="confirmDeleteBtn">Delete</button>
+         </div>
+      </div>
+   </div>
+
+
+   <script src="./js/account-management.js"></script>
+   <script src="./js/script.js"></script>
+   <script src="./js/settings.js"></script>
+</body>
+</html>
