@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Restore Super Admin</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .container {
+         background: white;
+         padding: 40px;
+         border-radius: 20px;
+         box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+         text-align: center;
+         max-width: 500px;
+      }
+      h1 {
+         color: #5a58ff;
+         margin-bottom: 20px;
+      }
+      .info {
+         background: #f0f0f0;
+         padding: 20px;
+         border-radius: 10px;
+         margin: 20px 0;
+         text-align: left;
+      }
+      .info p {
+         margin: 10px 0;
+      }
+      .info strong {
+         color: #5a58ff;
+      }
+      button {
+         background: #5a58ff;
+         color: white;
+         border: none;
+         padding: 15px 40px;
+         font-size: 16px;
+         border-radius: 12px;
+         cursor: pointer;
+         margin: 10px;
+         transition: 0.3s;
+      }
+      button:hover {
+         background: #3532f7;
+         transform: translateY(-2px);
+      }
+      .success {
+         background: #4caf50;
+         color: white;
+         padding: 15px;
+         border-radius: 10px;
+         margin-top: 20px;
+         display: none;
+      }
+      .back-btn {
+         background: #666;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <h1>🔧 Restore Super Admin Account</h1>
+      
+      <div class="info">
+         <p><strong>Username:</strong> jonasEscanilla</p>
+         <p><strong>Password:</strong> admin123</p>
+         <p><strong>Role:</strong> Super Admin</p>
+      </div>
+      
+      <p>Click the button below to restore the Super Admin account to your system.</p>
+      
+      <button onclick="restoreSuperAdmin()">Restore Super Admin</button>
+      
+      <div class="success" id="successMessage">
+         ✅ Super Admin account has been restored successfully!<br>
+         You can now log in with the credentials above.
+      </div>
+      
+      <br>
+      <button class="back-btn" onclick="window.location.href='./login.html'">Back to Login</button>
+   </div>
+
+   <script>
+      function restoreSuperAdmin() {
+         const accounts = JSON.parse(localStorage.getItem('userAccounts') || '[]');
+         
+         // Check if Super Admin already exists
+         const existingSuperAdmin = accounts.find(acc => acc.username === 'jonasEscanilla');
+         
+         if (existingSuperAdmin) {
+            alert('Super Admin account already exists!');
+            return;
+         }
+         
+         // Create Super Admin account
+         const superAdmin = {
+            id: 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
+            username: 'jonasEscanilla',
+            password: 'admin123',
+            role: 'Super Admin',
+            status: 'active',
+            createdBy: 'System',
+            createdAt: new Date().toISOString(),
+            isSuper: true
+         };
+         
+         // Add to beginning of array
+         accounts.unshift(superAdmin);
+         
+         // Save back to localStorage
+         localStorage.setItem('userAccounts', JSON.stringify(accounts));
+         
+         // Show success message
+         document.getElementById('successMessage').style.display = 'block';
+         
+         console.log('Super Admin restored:', superAdmin);
+      }
+   </script>
+</body>
+</html>
